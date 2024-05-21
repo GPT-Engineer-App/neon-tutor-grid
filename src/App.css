@@ -3,40 +3,83 @@
   margin: 0 auto;
   padding: 2rem;
   text-align: center;
+  background-color: black;
+  color: white;
 }
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
+.app {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
 }
 
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+  border-bottom: 1px solid #444;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
+.header h1 {
+  font-size: 2rem;
+  color: #fff;
 }
 
-.card {
-  padding: 2em;
+.main {
+  flex: 1;
+  padding: 2rem;
 }
 
-.read-the-docs {
-  color: #888;
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1rem;
+}
+
+.grid-card {
+  background: transparent;
+  border: 2px solid;
+  border-radius: 10px;
+  padding: 1rem;
+  transition: transform 0.3s;
+}
+
+.grid-card:hover {
+  transform: scale(1.05);
+}
+
+.grid-card:nth-child(1) { border-color: #ff007f; }
+.grid-card:nth-child(2) { border-color: #ff00ff; }
+.grid-card:nth-child(3) { border-color: #7f00ff; }
+.grid-card:nth-child(4) { border-color: #0000ff; }
+.grid-card:nth-child(5) { border-color: #007fff; }
+.grid-card:nth-child(6) { border-color: #00ffff; }
+.grid-card:nth-child(7) { border-color: #00ff7f; }
+.grid-card:nth-child(8) { border-color: #00ff00; }
+
+.chat-window {
+  margin-top: 2rem;
+}
+
+.tutors {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+}
+
+.tutor-button {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: transparent;
+  border: none;
+  color: white;
+  cursor: pointer;
+}
+
+.selected-tutor {
+  margin-top: 1rem;
+  font-size: 1.2rem;
+  color: #00ff00;
 }
