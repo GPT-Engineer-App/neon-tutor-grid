@@ -1,42 +1,135 @@
-#root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background-color: black;
+  color: white;
+}
+
+.app {
   text-align: center;
 }
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+  background-color: #333;
 }
 
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.header h1 {
+  margin: 0;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
+.header nav button {
+  background: none;
+  border: 1px solid white;
+  color: white;
+  padding: 0.5rem 1rem;
+  margin-left: 0.5rem;
+  cursor: pointer;
+}
+
+.header nav button:hover {
+  background-color: white;
+  color: black;
+}
+
+.subjects {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 1rem;
+  padding: 1rem;
 }
 
 .card {
-  padding: 2em;
+  background-color: #222;
+  border: 2px solid;
+  border-radius: 10px;
+  padding: 2rem;
+  font-size: 1.5rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: transform 0.3s;
 }
 
-.read-the-docs {
-  color: #888;
+.card:hover {
+  transform: scale(1.05);
+}
+
+.card:nth-child(1) { border-color: #ff007f; }
+.card:nth-child(2) { border-color: #ff00ff; }
+.card:nth-child(3) { border-color: #7f00ff; }
+.card:nth-child(4) { border-color: #0000ff; }
+.card:nth-child(5) { border-color: #007fff; }
+.card:nth-child(6) { border-color: #00ffff; }
+.card:nth-child(7) { border-color: #00ff7f; }
+.card:nth-child(8) { border-color: #00ff00; }
+
+.tutors {
+  padding: 1rem;
+}
+
+.tutor-card {
+  background-color: #444;
+  border: 2px solid #888;
+  border-radius: 10px;
+  padding: 1rem;
+  margin: 0.5rem 0;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.tutor-card.selected {
+  background-color: #666;
+}
+
+.chat {
+  padding: 1rem;
+}
+
+.chat-window {
+  background-color: #222;
+  border: 2px solid #444;
+  border-radius: 10px;
+  padding: 1rem;
+  height: 200px;
+  overflow-y: auto;
+  margin-bottom: 1rem;
+}
+
+.chat-message {
+  text-align: left;
+  margin: 0.5rem 0;
+}
+
+.chat-message.student {
+  text-align: right;
+}
+
+.chat-input {
+  display: flex;
+}
+
+.chat-input input {
+  flex: 1;
+  padding: 0.5rem;
+  border: 2px solid #444;
+  border-radius: 10px 0 0 10px;
+  background-color: #333;
+  color: white;
+}
+
+.chat-input button {
+  padding: 0.5rem 1rem;
+  border: 2px solid #444;
+  border-left: none;
+  border-radius: 0 10px 10px 0;
+  background-color: #444;
+  color: white;
+  cursor: pointer;
+}
+
+.chat-input button:hover {
+  background-color: #555;
 }
