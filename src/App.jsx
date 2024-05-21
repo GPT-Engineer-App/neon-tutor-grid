@@ -6,25 +6,34 @@ import {
   CardContent,
 } from "@/components/ui/card.jsx";
 import { Button } from "@/components/ui/button.jsx";
+import ChatWindow from "@/components/ChatWindow.jsx";
 import "./App.css";
 
 function App() {
   const [count, setCount] = useState(0);
 
   return (
-    <>
-      <Card>
-        <CardHeader>
-          <CardTitle>Hello world!</CardTitle>
-        </CardHeader>
-        <CardContent>
-          <p>This is an example</p>
-          <hr className="my-4" />
-          <Button onClick={() => setCount(count + 1)}>Click me</Button>
-          <div>Count: {count}</div>
-        </CardContent>
-      </Card>
-    </>
+    <div className="app-container">
+      <header className="app-header">
+        <h1 className="app-title">APPLES</h1>
+        <nav className="app-nav">
+          <Button variant="link">Sign Up</Button>
+          <Button variant="link">Sign In</Button>
+        </nav>
+      </header>
+      <main className="app-main">
+        <div className="grid-container">
+          {["Math", "English", "Language Arts", "Health", "Science", "Computer Tech", "Food", "Social Studies"].map((subject) => (
+            <Card key={subject} className="grid-card">
+              <CardHeader>
+                <CardTitle>{subject}</CardTitle>
+              </CardHeader>
+            </Card>
+          ))}
+        </div>
+        <ChatWindow />
+      </main>
+    </div>
   );
 }
 
