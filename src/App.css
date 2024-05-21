@@ -1,42 +1,113 @@
-#root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background-color: black;
+  color: white;
+}
+
+.app {
   text-align: center;
 }
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+  background-color: #333;
 }
 
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.header h1 {
+  margin: 0;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
+.header nav button {
+  background: none;
+  border: 1px solid white;
+  color: white;
+  padding: 0.5rem 1rem;
+  margin-left: 0.5rem;
+  cursor: pointer;
 }
 
-.card {
-  padding: 2em;
+.header nav button:hover {
+  background-color: white;
+  color: black;
 }
 
-.read-the-docs {
-  color: #888;
+.subjects-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 1rem;
+  padding: 1rem;
+}
+
+.subject-card {
+  background-color: #222;
+  border: 2px solid #0ff;
+  border-radius: 10px;
+  padding: 1rem;
+  font-size: 1.2rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+
+.subject-card:hover {
+  transform: scale(1.05);
+}
+
+.tutors {
+  padding: 1rem;
+}
+
+.tutors-list {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.tutor-card {
+  background-color: #222;
+  border: 2px solid #0ff;
+  border-radius: 10px;
+  padding: 1rem;
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+
+.tutor-card.selected {
+  border-color: #f0f;
+}
+
+.tutor-card:hover {
+  transform: scale(1.05);
+}
+
+.chat-window {
+  padding: 1rem;
+}
+
+.chat-box {
+  background-color: #222;
+  border: 2px solid #0ff;
+  border-radius: 10px;
+  padding: 1rem;
+}
+
+.chat-box .messages {
+  height: 200px;
+  overflow-y: auto;
+  margin-bottom: 1rem;
+}
+
+.chat-box input {
+  width: calc(100% - 60px);
+  padding: 0.5rem;
+  margin-right: 0.5rem;
+}
+
+.chat-box button {
+  padding: 0.5rem 1rem;
+  cursor: pointer;
 }
